@@ -11,6 +11,8 @@
 
 #include "raylib.h"
 #include "meep.h"
+#include <cstring>
+
 
 int main()
 {
@@ -25,7 +27,12 @@ int main()
 
 	//meep dave;
 
-	meep randel = { false };
+	//meep randel = { true };
+	meep* meeps[3];
+	for (int i = 0; i < 3; i++)
+	{
+		meeps[i] = { true, "resources/default.png" };
+	}
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -43,7 +50,7 @@ int main()
 		ClearBackground(RAYWHITE);
 
 		//dave.refresh();
-		randel.refresh();
+		//randel.refresh();
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------

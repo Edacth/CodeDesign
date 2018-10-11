@@ -1,20 +1,42 @@
-#include "raylib.h"
+#include "meep.h"
+#include <iostream>
+#include <string>
 
-class meep
+meep::meep()
 {
-public:
+	enabled = true;
+	texture = LoadTexture("resources/default.png");
+}
 
-	//Vars
-	bool enabled = true;
-	Texture2D texture;
+meep::meep(bool _enabled)
+{
+	enabled = _enabled;
+	texture = LoadTexture("resources/default.png");
+}
 
-	// Constructors & Destructors
-	meep();
-	meep(bool _enabled);
-	~meep();
+meep::meep(bool _enabled, std::string texturePath)
+{
+	enabled = _enabled;
+	texture = LoadTexture(texturePath.c_str);
+}
 
-	// Misc Functions
-	void refresh();
+meep::meep(bool _enabled, std::string texturePath, bool _playerControlled)
+{
+	enabled = _enabled;
+	texture = LoadTexture(texturePath.c_str);
+	playerControlled = _playerControlled;
+}
 
-private:
-};
+meep::~meep()
+{
+	std::cout << "A meep just died." << std::endl;
+}
+
+void meep::refresh()
+{
+	if (enabled)
+	{
+		DrawTextureEx(texture, {200, 200}, 0, 4.0, WHITE);
+
+	}
+}
