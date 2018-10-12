@@ -1,6 +1,7 @@
 #include "meep.h"
 #include <iostream>
 #include <string>
+#include <cstring>
 
 meep::meep()
 {
@@ -17,13 +18,14 @@ meep::meep(bool _enabled)
 meep::meep(bool _enabled, std::string texturePath)
 {
 	enabled = _enabled;
-	texture = LoadTexture(texturePath.c_str);
+	texture = LoadTexture( (texturePath.c_str()) );
+	std::cout << texturePath << std::endl;
 }
 
 meep::meep(bool _enabled, std::string texturePath, bool _playerControlled)
 {
 	enabled = _enabled;
-	texture = LoadTexture(texturePath.c_str);
+	//texture = LoadTexture(texturePath.c_str);
 	playerControlled = _playerControlled;
 }
 
@@ -37,6 +39,5 @@ void meep::refresh()
 	if (enabled)
 	{
 		DrawTextureEx(texture, {200, 200}, 0, 4.0, WHITE);
-
 	}
 }

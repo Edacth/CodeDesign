@@ -12,6 +12,7 @@
 #include "raylib.h"
 #include "meep.h"
 #include <cstring>
+#include <string>
 
 
 int main()
@@ -26,13 +27,13 @@ int main()
 	SetTargetFPS(60);
 
 	//meep dave;
-
-	//meep randel = { true };
-	meep* meeps[3];
+	std::string filePath = "resources/test.png";
+	meep randel = { true, filePath };
+	/*meep* meeps[3];
 	for (int i = 0; i < 3; i++)
 	{
 		meeps[i] = { true, "resources/default.png" };
-	}
+	}*/
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -50,7 +51,7 @@ int main()
 		ClearBackground(RAYWHITE);
 
 		//dave.refresh();
-		//randel.refresh();
+		randel.refresh();
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------
