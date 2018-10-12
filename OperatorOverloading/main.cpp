@@ -123,19 +123,19 @@ int main()
 					std::string fileName;
 
 					
-					if (tilemap[i][j].imageFilename == "mapTile_017.png")
+					if (*tilemap[i][j].imageFilename == "mapTile_017.png")
 					{
 						buffer = 'x';
 					}
-					else if (tilemap[i][j].imageFilename == "mapTile_188.png")
+					else if (*tilemap[i][j].imageFilename == "mapTile_188.png")
 					{
 						buffer = 'o';
 					}
-					else if (tilemap[i][j].imageFilename == "mapTile_022.png")
+					else if (*tilemap[i][j].imageFilename == "mapTile_022.png")
 					{
 						buffer = 'g';
 					}
-					else if (tilemap[i][j].imageFilename == "mapTile_027.png")
+					else if (*tilemap[i][j].imageFilename == "mapTile_027.png")
 					{
 						buffer = 'm';
 					}
